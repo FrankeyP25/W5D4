@@ -26,11 +26,8 @@ class Course < ApplicationRecord
     class_name: :User
 
     has_many :prereq,
-    primary_key: :id,
-    foreign_key: :prereq_id, 
-    class_name: :Enrollment
+    primary_key: :prereq_id,
+    foreign_key: :id, 
+    class_name: :Course
     
-    has_many :prerequisite,
-    through: :prereq,
-    source: :course
 end
